@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Plane.create!(plane_type: "Airbus A320")
+Plane.create!(plane_type: "Boeing 737")
+Plane.create!(plane_type: "Boeing 777")
+Plane.create!(plane_type: "Boeing 747")
+Plane.create!(plane_type: "Airbus A340")
