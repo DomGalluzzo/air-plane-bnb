@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class PlanesControllerTest < ActionDispatch::IntegrationTest
+  # test "the truth" do
+  #   assert true
+  # end
+
   test "should get index" do
     get planes_index_url
     assert_response :success

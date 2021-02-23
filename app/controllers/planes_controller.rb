@@ -1,5 +1,4 @@
 class PlanesController < ApplicationController
-  before_action :find_plane only: :show
 
   def index
     @planes = Plane.all
@@ -20,17 +19,7 @@ class PlanesController < ApplicationController
   end
 
   def show
-  end
-
-  private
-
-  def find_plane
     @plane = Plane.find(params[:id])
   end
-  
-  def plane_params
-    params.require(:plane).permit(:model)
-  end
-  
 
 end
