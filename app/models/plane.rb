@@ -1,4 +1,3 @@
 class Plane < ApplicationRecord
-  belongs_to :booking
-  belongs_to :user
+  belongs_to :bookings
 end

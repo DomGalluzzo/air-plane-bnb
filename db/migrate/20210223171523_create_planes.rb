@@ -7,8 +7,7 @@ class CreatePlanes < ActiveRecord::Migration[6.0]
       t.string :address
       t.integer :latitude
       t.integer :longitude
-      t.references :booking, null: false, foreign_key: true
-      t.references :user, null: false, foreign_key: true
+      t.references :bookings, null: false, foreign_key: true
 
       t.timestamps
     end
