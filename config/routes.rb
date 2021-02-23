@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
+  
   root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get '/planes', to: 'planes#index'
+  get '/planes/new', to: 'planes#new'
+  post '/planes', to: 'planes#create'
+  get '/planes/:id' to: 'planes#show'
+
 end
