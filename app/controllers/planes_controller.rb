@@ -1,7 +1,7 @@
 class PlanesController < ApplicationController
 
   def index
-    @planes = Plane.all
+    @planes = Plane.search(params[:search])
   end
 
   def new
@@ -22,4 +22,9 @@ class PlanesController < ApplicationController
     @plane = Plane.find(params[:id])
   end
 
+  private
+
+  def plane_params
+    params.require(:plane).permit(:address, :max_occupancy, :price, :address, :search)
+  end
 end
