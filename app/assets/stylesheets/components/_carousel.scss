@@ -2,9 +2,6 @@
   height: 80vh;
   min-height: 350px;
   background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
 }
 
@@ -15,7 +12,6 @@
 }
 
 
-
 // .container {
 //   position: absolute;
 //   bottom: 0;
@@ -23,3 +19,49 @@
 //   right: 0;
 //   padding-bottom: 50px;
 // }
+
+.typing-text {
+position: relative;
+}
+
+.typing-text>p {
+  font-size: 3rem;
+  font-weight: 400;
+  position: absolute;
+  top: -500px;
+  left: 500px;
+  color: white;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+.typed-text {
+  font-weight: normal;
+  color: red;
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  animation: blink 1s infinite;
+}
+
+.cursor.typing{
+  animation: none;
+}
+
+@media(max-width: 1720px){
+  .typing-text{
+    display: none;
+  }
+}
+
+@keyframes blink{
+  0% {background-color: #ccc}
+  49% {background-color: #ccc}
+  50% {background-color: transparent; }
+  99% {background-color: transparent;}
+  100% {background-color: #ccc;}
+}
