@@ -1,4 +1,5 @@
 class PlanesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
 
   def index
     @planes = Plane.search(params[:search])
@@ -10,7 +11,7 @@ class PlanesController < ApplicationController
 
   def create
     @plane = Plane.new(plane_params)
-
+    @plane.user = current_user
     if @plane.save
       redirect_to @plane
     else
