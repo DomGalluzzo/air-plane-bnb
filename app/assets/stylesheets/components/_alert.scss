@@ -1,6 +1,9 @@
+
 .alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
+  position: sticky;
+  text-align: center;
+  width: 50%;
+  height: 100%;
+  margin-left: 300px;
   z-index: 1000;
 }

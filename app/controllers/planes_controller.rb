@@ -1,7 +1,8 @@
 class PlanesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
 
   def index
-    @planes = Plane.all
+    @planes = Plane.search(params[:search])
   end
 
   def new
@@ -10,7 +11,7 @@ class PlanesController < ApplicationController
 
   def create
     @plane = Plane.new(plane_params)
-
+    @plane.user = current_user
     if @plane.save
       redirect_to @plane
     else
@@ -20,6 +21,12 @@ class PlanesController < ApplicationController
 
   def show
     @plane = Plane.find(params[:id])
+    @booking = Booking.new
   end
 
+  private
+
+  def plane_params
+    params.require(:plane).permit(:address, :max_occupancy, :price, :address, :search)
+  end
 end
