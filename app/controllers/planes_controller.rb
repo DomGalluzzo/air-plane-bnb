@@ -1,7 +1,11 @@
 class PlanesController < ApplicationController
 
   def index
-    @planes = Plane.all
+    if params[:address]
+      @plane = Plane.where('address LIKE ?', "%#{params[:address]}%")
+    else
+      @planes = Plane.all
+    end
   end
 
   def new
@@ -21,5 +25,12 @@ class PlanesController < ApplicationController
   def show
     @plane = Plane.find(params[:id])
   end
+
+  private
+
+  def plane_params
+    params.require(:plane).permit(:address, :search)
+  end
+  
 
 end
