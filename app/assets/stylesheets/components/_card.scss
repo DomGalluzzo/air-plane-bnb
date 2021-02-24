@@ -1,0 +1,64 @@
+.row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+}
+
+h1 {
+  text-align: center;
+}
+
+.row > div{
+  margin: 10px;
+}
+
+.card-category {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.row {
+    margin-bottom: 50px;
+  }
+  
+.big-card {
+  margin-left: 20%;
+  height: 475px;
+  width: 78%;
+  position: relative;
+}
+
+.text-container{
+  position: absolute;
+  left: 25px;
+}
+    
+.btn-circle {
+  width: 150px; 
+  height: 40px; 
+  border-radius: 15px; 
+  text-align: center; 
+  font-weight: 700;
+  color: black;
+}
+  
+h2 {
+  font-weight: 500;
+  text-align: center;
+}
+
+  
