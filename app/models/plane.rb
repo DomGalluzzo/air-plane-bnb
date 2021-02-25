@@ -7,5 +7,4 @@ class Plane < ApplicationRecord
   validates :price, presence: true
   validates :address, presence: true
   validates :city, presence: true
-  # validates :photos, presence: true
 end
