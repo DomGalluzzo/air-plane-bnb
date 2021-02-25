@@ -5,8 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
 Plane.destroy_all
 User.destroy_all
+
+cities = ["Mexico City", "Amsterdam", "London", "New York", "Los Angeles", "San Francisco"]
+plane_types = ["Cessna Skycatcher", "Icon A5 Amphibious Light Sport Aircraft", "Guflstream G550", "Bombadier Challenger 300", "Millenium Falcon", "Embraer Legacy 600"]
+
 puts "> Creating user..."
 user = User.create!(
   email: "eduardo.am4590@gmail.com",
@@ -14,22 +20,15 @@ user = User.create!(
 )
 puts "> Done!"
 puts "> Creating Planes..."
-2.times do
-  plane = Plane.create!(
-    plane_type: "Airbus A320",
-    max_occupancy: rand(50...100),
-    price: (1000 ...10000),
-    address: "CDMX",
-    user: user
-  )
-end
-3.times do
+
+10.times do
     plane = Plane.create!(
-      plane_type: "Boeing 777",
-      max_occupancy: rand(50...100),
-      price: rand(1000 ...10000),
-      address: "New York",
-      user: user
+      plane_type: plane_types.sample(),
+      max_occupancy: rand(10..50),
+      price: rand(1000...10000),
+      address: Faker::Address.street_address,
+      user: user,
+      city: cities.sample()
     )
   end
 puts "> Done!"
