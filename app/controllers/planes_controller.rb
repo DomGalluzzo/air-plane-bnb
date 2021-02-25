@@ -1,5 +1,6 @@
 class PlanesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
+  before_action :find_plane_id, only: :show
 
   def index
     if params[:city].present?
@@ -31,13 +32,16 @@ class PlanesController < ApplicationController
   end
 
   def show
-    @plane = Plane.find(params[:id])
     @booking = Booking.new
   end
 
   private
 
+  def find_plane_id
+    @plane = Plane.find(params[:id])
+  end
+
   def plane_params
-    params.require(:plane).permit(:address, :max_occupancy, :price, :query, :city)
+    params.require(:plane).permit(:plane_type, :address, :max_occupancy, :price, :query, :city, photos: [])
   end
 end
