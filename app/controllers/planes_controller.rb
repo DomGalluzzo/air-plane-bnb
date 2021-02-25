@@ -18,6 +18,7 @@ class PlanesController < ApplicationController
   end
 
   def create
+    authorize(@plane)
     @plane = Plane.new(plane_params)
     @plane.user = current_user
     if @plane.save
