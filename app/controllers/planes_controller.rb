@@ -28,6 +28,6 @@ class PlanesController < ApplicationController
   private
 
   def plane_params
-    params.require(:plane).permit(:address, :max_occupancy, :price, :address, :search, :city)
+    params.require(:plane).permit(:address, :max_occupancy, :price, :search, :city)
   end
 end
