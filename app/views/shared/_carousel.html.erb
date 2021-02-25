@@ -20,9 +20,9 @@
     <form action="/planes">
       <div class="input-group mb-3">
         <%# <input type="text" class="form-control" placeholder="Search ......" aria-label="Recipient's username"> %>
-         <%= form_tag planes_path(city: params[:query]), method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
+         <%= form_tag planes_path, method: :get do %>
+          <%= text_field_tag :city,
+            params[:city],
             class: "form-control",
             placeholder: "Search ......"
           %>

@@ -1,108 +1,26 @@
-<div class="jumbotron jumbotron-fluid" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1587162146766-e06b1189b907?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1425&q=80) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; height:70vh">
+<div class="jumbotron jumbotron-fluid" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(<%=@background_image%>) no-repeat center center fixed;  background-size: cover; height:70vh">
   <div class="container">
-    <h1 class="display-4 d-flex justify-content-center" style="color: white; padding-top:100px">New York</h1>
+    <h1 class="display-4 d-flex justify-content-center" style="color: white; padding-top:100px"><%= (params[:city].present? and not @planes.empty?) ? params[:city] : "No result found" %></h1>
   </div>
 </div>
-<%# 
-<div class="container">
-<div class="row justify-content-center align-item-center">
-    <div class="col-sm-10">
-      <a class="card space-card box-shadow" style="text-align: center backgorund-origin: padding-box" href="/planes/1">
-          <img class="card-img-top" style="border: 25px solid #555" alt="image" src="https://images.unsplash.com/photo-1601636759502-2112d13ed748?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2736&q=80" data-holder-rendered="true">
-          <div class="card-body p-12">
-              <h3>Cessna</h3>
-              <p class="card-text-address">Westchester County Airport — White Plains, NY </p>
-              <p class="card-text-occupancy">6 people</p>
-              <p class="card-text-price">$4,000 per trip</p>
-              <div class="d-flex justify-content-center align-item-center">
-                  <div class="btn-group mt-auto ">
-                  <button type="button" class="btn btn-primary">Book now!</button>
-                  </div>
-              </div>
-          </div>
-      </a>
-    </div>
-</div>
-</div> %>
 
 <%# <%= render 'shared/product-card' %> 
-<% @planes.each do |plane| %>
-  <% if params[:query].present? %>
-    <%= plane.city %>
-  <% else %>
-    <%= plane.city if params[:city] == plane.city %>
-  <% end %>
-  
-<% end %>
 
+  <h1 class="p-4">Our Planes</h1> <hr>
 <div class="container">
-  <div class="row" style="margin-left: 50px; margin-top: -100px">
-    <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1382&q=80">
-      <div class="card-trip-infos">
-      
-        <div>
-          <h2>Citation 1000</h2>
-          <p class="card-text">Awesome airplane that will take you from point a to point b in less than a blink of an eye😂😂😂😂</p>
-        <h2 class="card-trip-pricing">$4000</h2>
+  <div class="row" style="margin-left: 50px">
+    <% @planes.each do |plane| %>
+      <div class="card-trip">
+        <img src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1382&q=80">
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= plane.plane_type %></h2>
+            <p class="card-text"><%= plane.city %></p>
+          <h2 class="card-trip-pricing">$<%=plane.price%></h2>
+          </div>
+          <%= link_to "Book Now", plane_path(plane), class: "btn btn-flat" %>
         </div>
-        <a class="btn btn-flat" href="#">Book now</a>
       </div>
-    </div>
-    <div class="card-trip">
-      <img src="https://assets.skiesmag.com/wp-content/uploads/2020/06/HondaJet-C-GJTP-Stanley-Ip-Photo.jpg">
-      <div class="card-trip-infos">
-        <div>
-          <h2>Honda Jet</h2>
-          <p class="card-text">Awesome airplane that will take you from point a to point b in less than a blink of an eye😂😂😂😂</p>
-        <h2 class="card-trip-pricing">$4000</h2>
-        </div>
-        <a class="btn btn-flat" href="#">Book now</a>
-      </div>
-    </div>
-    <div class="card-trip">
-      <img src="https://www.air-hamburg.de/images/stories/flotte/citation_cj2/ah_flotte_slider_cj2_exterior_2.jpg">
-      <div class="card-trip-infos">
-        <div>
-          <h2>Cessna Citation CJ2</h2>
-          <p class="card-text">Awesome airplane that will take you from point a to point b in less than a blink of an eye😂😂😂😂</p>
-        <h2 class="card-trip-pricing">$4000</h2>
-        </div>
-        <a class="btn btn-flat" href="#">Book now</a>
-      </div>
-    </div>
-    <div class="card-trip">
-      <img src="https://images.unsplash.com/photo-1585664156644-e30d5021fb3e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
-      <div class="card-trip-infos">
-        <div>
-          <h2>Gulfstream G150</h2>
-          <p class="card-text">Awesome airplane that will take you from point a to point b in less than a blink of an eye😂😂😂😂</p>
-        <h2 class="card-trip-pricing">$4000</h2>
-        </div>
-        <a class="btn btn-flat" href="#">Book now</a>
-      </div>
-    </div>
-    <div class="card-trip">
-      <img src="https://www.tagaviation.com/fileadmin/_processed_/6/f/csm__DB_4726_1_c515459342.jpg">
-      <div class="card-trip-infos">
-        <div>
-          <h2>Cessna Citation Sovereign</h2>
-          <p class="card-text">Awesome airplane that will take you from point a to point b in less than a blink of an eye😂😂😂😂</p>
-        <h2 class="card-trip-pricing">$4000</h2>
-        </div>
-        <a class="btn btn-flat" href="#">Book now</a>
-      </div>
-    </div>
-    <div class="card-trip">
-      <img src="https://i.pinimg.com/originals/1c/53/87/1c5387e250a4c3379e54d97842a35727.jpg">
-      <div class="card-trip-infos">
-        <div>
-          <h2>Socata TBM 850</h2>
-          <p class="card-text">Awesome airplane that will take you from point a to point b in less than a blink of an eye😂😂😂😂</p>
-        <h2 class="card-trip-pricing">$4000</h2>
-        </div>
-        <a class="btn btn-flat" href="#">Book now</a>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
