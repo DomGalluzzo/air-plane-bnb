@@ -1,16 +1,11 @@
 class Plane < ApplicationRecord
   belongs_to :user
+  has_many_attached :photos, dependent: :destroy
 
-  # def self.search(search)
-  #   if search
-  #     city = Plane.find_by(address: search)
-  #     if city
-  #       self.where(address: city)
-  #     else
-  #       @planes = Plane.all
-  #     end
-  #   else
-  #     @planes = Plane.all
-  #   end
-  # end
+  validates :plane_type, presence: true
+  validates :max_occupancy, presence: true
+  validates :price, presence: true
+  validates :address, presence: true
+  validates :city, presence: true
+  validates :photos, presence: true
 end
