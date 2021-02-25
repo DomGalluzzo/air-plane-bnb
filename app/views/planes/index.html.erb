@@ -26,5 +26,6 @@
 </div>
 
 <%# <%= render 'shared/product-card' %> 
-
-
+<% @planes.each do |plane| %>
+  <%= plane.city %>
+<% end %>
