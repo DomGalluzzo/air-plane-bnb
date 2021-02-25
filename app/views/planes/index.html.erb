@@ -27,5 +27,10 @@
 
 <%# <%= render 'shared/product-card' %> 
 <% @planes.each do |plane| %>
-  <%= plane.city %>
+  <% if params[:query].present? %>
+    <%= plane.city %>
+  <% else %>
+    <%= plane.city if params[:city] == plane.city %>
+  <% end %>
+  
 <% end %>
