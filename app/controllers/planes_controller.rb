@@ -2,8 +2,14 @@ class PlanesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    # @planes = Plane.search(params[:search])
-    @planes = Plane.where("city LIKE ?", params[:city])
+    if params[:query].present?
+      sql_query = " \
+      planes.city ILIKE :query \
+      "
+      @planes = Plane.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @planes = Plane.all
+    end
   end
 
   def new
@@ -28,6 +34,6 @@ class PlanesController < ApplicationController
   private
 
   def plane_params
-    params.require(:plane).permit(:address, :max_occupancy, :price, :address, :search, :city)
+    params.require(:plane).permit(:address, :max_occupancy, :price, :query, :city)
   end
 end

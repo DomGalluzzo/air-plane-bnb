@@ -19,7 +19,14 @@
     <div class="search-bar">
     <form action="/planes">
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Search ......" aria-label="Recipient's username">
+        <%# <input type="text" class="form-control" placeholder="Search ......" aria-label="Recipient's username"> %>
+         <%= form_tag planes_path(city: params[:query]), method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search ......"
+          %>
+        <% end %>
         <div class="input-group-append">
           <%# <span class="input-group-text"><i class="fa fa-search"></i></span> %>
           <input type="submit" value="Search">
