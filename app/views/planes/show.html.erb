@@ -7,12 +7,7 @@
         <div class="form-group mt-8">
           <h1>Book your flight</h1>
           <div class="mt-3">
-               
-            <%= simple_form_for [ @plane, @booking  ] do |f| %>
-              <%= f.input :destination%>
-              <%= f.input :booking_date %>
-              <%= f.submit %>
-            <% end %>
+            <%= render "shared/booking_form" %>
           </div>
         </div>
       </div>

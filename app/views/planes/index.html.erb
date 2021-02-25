@@ -25,7 +25,7 @@
 </div>
 </div> %>
 
-<%# <%= render 'shared/product-card' %> 
+<%= render "shared/plane_card" %>
 <% @planes.each do |plane| %>
   <% if params[:query].present? %>
     <%= plane.city %>
