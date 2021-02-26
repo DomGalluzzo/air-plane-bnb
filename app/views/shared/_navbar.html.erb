@@ -5,8 +5,7 @@
             <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars text-white"></i></button>
             
             <div id="navbarSupportedContent" class="collapse navbar-collapse">
-            <%= link_to "List your plane", new_plane_path, class: "btn btn-danger mr-5 rounded-pill" %>
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto mr-5">
                   <% if user_signed_in? %>
                     <li class="navbar-item active"><%= link_to :logout, destroy_user_session_path, method: "delete", data: { confirm: "Are you sure? ", title: "Log Out?", commit: "Yes", cancel: "No" }, class: "nav-link text-uppercase font-weight-bold" %></li>
                   <% else %>
@@ -15,39 +14,7 @@
                   
                   <% end %>
                 </ul>
+                  <%= link_to "List your plane", new_plane_path, class: "btn btn-danger mr-5 rounded-pill" %>
             </div>
         </div>
     </nav>
-<%# <%= link_to "List your plane", new_plane_path class="btn btn-danger mr-5 rounded-pill"  %>  
-<%#  
-navbar-brand text-uppercase font-weight-bold
-  <div class="navbar navbar-expand-sm transparent navbar-inverse navbar-fixed-top navbar-lewagon">
-    <%= link_to "Air(plane)BNB", class: "navbar-brand" 
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-
-    <div class="collapse navbar-collapse navbar-inner" id="navbarSupportedContent">
-      <div class="nav pull-right">
-        <button type="button" class="btn btn-primary navbar-btn">
-        <span class="glyphicon glyphicon-plus"></span> 
-          List your plane
-        </button>
-      </div>
-      <ul class="navbar-nav mr-auto">
-
-        <li class="nav-item active">
-          <%= link_to "SIGN IN", "#", class: "nav-link" 
-        </li>
-        <li class="nav-item active">
-          <%= link_to "LOGIN", "#", class: "nav-link" 
-        </li>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" 
-        </li>
-      </ul>
-    </div>
-  </div>
-%>
