@@ -4,6 +4,7 @@
 const channels = require.context('.', true, /_channel\.js$/)
 channels.keys().forEach(channels)
 
+// Navbar
 $(function () {
   $(window).on('scroll', function () {
       if ( $(window).scrollTop() > 10 ) {
@@ -14,6 +15,8 @@ $(function () {
   });
 });
 
+
+// Expandable Cards
 const panels = document.querySelectorAll('.panel')
 
 panels.forEach((panel) => {
@@ -29,6 +32,8 @@ function removeActiveClasses() {
     })
 }
 
+
+// Typing effect
 const typedTextSpan = document.querySelector(".typed-text");
 const textArray = ["Money", "Time",];
 const typingDelay = 200;

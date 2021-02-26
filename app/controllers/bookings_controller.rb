@@ -9,8 +9,13 @@ class BookingsController < ApplicationController
     @plane = Plane.find(params[:plane_id])
     @booking.plane = @plane
     @booking.user = current_user
-    @booking.save
-    redirect_to root_path
+    if @booking.save
+    redirect_to  plane_booking_path(@plane.id, @booking.id)
+    end
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   private
