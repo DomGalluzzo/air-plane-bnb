@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
         <div class="col-sm-12">
-          <img id="main-picture" src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1382&q=80">
+          <img id="main-picture" src=<%= cl_image_tag @plane.photos.first&.key %>>
         </div>
           
           <div class="col-sm-6 m-0 booking-info mt-2">
@@ -18,7 +18,7 @@
           <%= render "shared/booking_form" %>
           </div>
    </div>
-</div>
+
 
 
 
