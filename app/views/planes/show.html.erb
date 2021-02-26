@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
-        <div class="col-sm-12">
-          <img id="main-picture" src=<%= cl_image_tag @plane.photos.first&.key %>>
+        <div class="col-sm-12">  
+            <img class="img-fluid" src=<%= cl_image_tag @plane.photos.first&.key %>>
         </div>
           
           <div class="col-sm-6 m-0 booking-info mt-2">
             <h1><%= @plane.plane_type %></h1>
-            <p class="booking-card-text"><% @plane.city %></p>
-            <p class="booking-card-address">123 avenue</p>
+            <p class="booking-card-text"><%= @plane.city %></p>
+            <p class="booking-card-address"><%= @plane.address %></p>
             <p class="booking-card-info">Your return flights coming with 2 air stewards/stewardesses who will be on hand to serve a choice of meal and refreshements. You will habe an opportunity to tailer the menus in advance.</p>
             <p class="booking-card-occupancy"><i class="fas fa-users" style="font-size:20px;"></i> <%= @plane.max_occupancy %> </p>
             <h2 class="booking-card-pricing">$<%=@plane.price%></h2>
