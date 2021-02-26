@@ -1,25 +1,24 @@
-<body>
-  <div class="grid-container">
+<div class="container">
+  <div class="row">
+        <div class="col-sm-12">  
+            <img class="img-fluid" src=<%= cl_image_tag @plane.photos.first&.key %>>
+        </div>
+          
+          <div class="col-sm-6 m-0 booking-info mt-2">
+            <h1><%= @plane.plane_type %></h1>
+            <p class="booking-card-text"><%= @plane.city %></p>
+            <p class="booking-card-address"><%= @plane.address %></p>
+            <p class="booking-card-info">Your return flights coming with 2 air stewards/stewardesses who will be on hand to serve a choice of meal and refreshements. You will habe an opportunity to tailer the menus in advance.</p>
+            <p class="booking-card-occupancy"><i class="fas fa-users" style="font-size:20px;"></i> <%= @plane.max_occupancy %> </p>
+            <h2 class="booking-card-pricing">$<%=@plane.price%></h2>
+          </div>
+     
+          <div class="col-sm-6 m-0 booking-form mt-2">
+          <p class="title_of_form">Book your flight</p>
+          <%= render "shared/booking_form" %>
+          </div>
+   </div>
 
-    <div class="grid-item booking-card">
-      <img id="main-picture" src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1382&q=80">
-    </div>
-
-    <div class="grid-item booking-card-infos">
-      <h1>Citation 1000</h1>
-      <p class="booking-card-text">New York</p>
-      <p class="booking-card-address">Republic Airport — Farmingdale, NY</p>
-      <p class="booking-card-info">Your return flights coming with 2 air stewards/stewardesses who will be on hand to serve a choice of meal and refreshements. You will habe an opportunity to tailer the menus in advance.</p>
-      <p class="booking-card-occupancy">10 people</p>
-      <h2 class="booking-card-pricing">$4000</h2>
-    </div>
-      
-    <div class="grid-item booking-form">
-    <p class ="title_of_form">Book your flight</p>
-    <%= render "shared/booking_form" %>
-    </div>
-  </div>
-</body>
 
 
 
