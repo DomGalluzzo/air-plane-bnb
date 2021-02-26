@@ -1,0 +1,41 @@
+#booking-confirmation{
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    background-color:#F4F4F4;
+    min-height: 100%;
+    min-height: 100vh;
+}
+
+.container-color{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    width: 500px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+#booking-info{
+    // text-align: center;
+    width: 300px;
+}
+
+.header{
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+}
+
+.header-size{
+ font-size: 1.5rem;
+}
+
+#booking-container{
+    display: flex;
+    justify-content: center;
+} 
+
+.home-btn{
+    margin-top: 30px;
+}
