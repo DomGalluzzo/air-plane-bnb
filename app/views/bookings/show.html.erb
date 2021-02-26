@@ -1,7 +1,19 @@
-<h1> "CONGRATULATIONS!!!" </h3>
-<h2> "You have a flight!!"</h2>
-<ul class="list-group">
-    <li class="list-group-item">Destination: <%= @booking.destination%></li>
-    <li class="list-group-item">Booking id: <%= @booking.id%></li>
-    <li class="list-group-item">Plane id: <%= @booking.plane.id%></li>
-</ul>
+<div id="booking-confirmation">
+    <div class="container container-color" id="booking-container">
+        <div class="list-info" id="booking-info">
+            <div class="header">
+                <h2 class="header-size"> "CONGRATULATIONS" </h2>
+                <h2 class="header-size"> 🛩🛩🛩🛩</h2>
+            </div>   
+            <ul class="list-group">
+                <li class="list-group-item">Destination: <%= @booking.destination%></li>
+                <li class="list-group-item">Date: <%= @booking.booking_date%></li>
+                <li class="list-group-item">Booking id: <%= @booking.id%></li>
+                <li class="list-group-item">Plane id: <%= @booking.plane.id%></li>
+            </ul>
+            <div class="home-btn">
+                <a class="btn btn-flat" href="http://localhost:3000/" role="button">Home Page</a>
+            </div>
+        </div>
+    </div>
+</div>
