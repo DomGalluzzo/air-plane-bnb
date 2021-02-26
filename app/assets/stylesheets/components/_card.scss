@@ -19,6 +19,13 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.small-card:hover {
+  transform: scale(.96);
+  transition: all 0.25s ease-in-out;
+  font-family: 'Dancing Script', cursive;
+}
+
+
 .big-card {
   margin-left: 20%;
   height: 475px;

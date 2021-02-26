@@ -64,6 +64,45 @@
 }
 
 
+// Icon animation
+
+#Capa_1 {
+  fill: transparent;
+  stroke-width: 20;
+  stroke: white;
+  fill: transparent;
+  stroke-dasharray: 1590;
+  stroke-dashoffset: 0;
+
+  &:hover {
+    animation: animate-plane 1.75s linear both
+  }
+}
+
+
+@keyframes animate-plane {
+  0% {
+    stroke-dashoffset: 0;
+    stroke: white;
+  }
+  40% {
+    stroke-dashoffset: 1590;
+    stroke: red;
+  }
+  80% {
+    stroke-dashoffset: 1590;
+    stroke: red;
+    fill: red;
+  }
+  100% {
+    stroke-dashoffset: 3180;
+    // stroke:red;
+    fill: red;
+  }
+
+}
+
+// 3180
 
 
 // .navbar-lewagon {
