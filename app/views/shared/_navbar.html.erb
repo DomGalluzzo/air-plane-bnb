@@ -8,7 +8,7 @@
             <%= link_to "List your plane", new_plane_path, class: "btn btn-danger mr-5 rounded-pill" %>
                 <ul class="navbar-nav ml-auto">
                   <% if user_signed_in? %>
-                    <li class="navbar-item active"><%= link_to :logout, destroy_user_session_path, method: "delete", class: "nav-link text-uppercase font-weight-bold" %></li>
+                    <li class="navbar-item active"><%= link_to :logout, destroy_user_session_path, method: "delete", data: { confirm: "Are you sure? ", title: "Log Out?", commit: "Yes", cancel: "No" }, class: "nav-link text-uppercase font-weight-bold" %></li>
                   <% else %>
                     <li class="navbar-item active"><%= link_to "SIGN UP", new_user_registration_path, class: "nav-link text-uppercase font-weight-bold" %></li>
                     <li class="nav-item active"><%= link_to "Login", new_user_session_path, class: "nav-link text-uppercase font-weight-bold" %></li>
