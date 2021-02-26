@@ -1,30 +1,26 @@
-<div class="container">
+<body>
+  <div class="grid-container">
 
-    <div class="booking-card" style= "margin-top: 100px" >
+    <div class="grid-item booking-card">
       <img id="main-picture" src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1382&q=80">
-      
-      </div>
-        <div class="booking-card-infos">
-          <h2>Citation 1000</h2>
-          <p class="booking-card-text">New York</p>
-          <p class="booking-card-address">Plaza</p>
-          <p class="booking-card-occupancy">10 people</p>
-          <h2 class="booking-card-pricing">$4000</h2>
-        </div>
-      
-        <div class="booking_form">
-          <h2>Book your flight</h2>
-          <%= render "shared/booking_form" %>
-        </div>
-</div>
+    </div>
 
-<div class="wrapper aligned">
-  <div class="box item1">One</div>
-  <div class="box item2">Two</div>
-  <div class="box item3">Three</div>
-  <div class="box item4">Four</div>
-  <div class="box item5">Five</div>
-</div>
+    <div class="grid-item booking-card-infos">
+      <h1>Citation 1000</h1>
+      <p class="booking-card-text">New York</p>
+      <p class="booking-card-address">Republic Airport — Farmingdale, NY</p>
+      <p class="booking-card-info">Your return flights coming with 2 air stewards/stewardesses who will be on hand to serve a choice of meal and refreshements. You will habe an opportunity to tailer the menus in advance.</p>
+      <p class="booking-card-occupancy">10 people</p>
+      <h2 class="booking-card-pricing">$4000</h2>
+    </div>
+      
+    <div class="grid-item booking-form">
+    <p class ="title_of_form">Book your flight</p>
+    <%= render "shared/booking_form" %>
+    </div>
+  </div>
+</body>
+
 
 
       

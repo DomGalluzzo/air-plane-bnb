@@ -1,4 +1,6 @@
-<%= simple_form_for(@plane) do |f| %>
-  <%= f.input :booking_date %>
-  <%= f.submit %>
+
+<%= simple_form_for [ @plane, @booking  ] do |f| %>
+<%= f.input :destination %>
+<%= f.input :booking_date, as: :date, html5: true %>
+<%= f.button :submit, class: 'btn btn-book' %> 
 <% end %>

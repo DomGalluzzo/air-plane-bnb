@@ -3,13 +3,17 @@ class PlanesController < ApplicationController
   before_action :find_plane_id, only: :show
 
   def index
-    if params[:query].present?
+    if params[:city].present?
       sql_query = " \
       planes.city ILIKE :query \
       "
-      @planes = Plane.where(sql_query, query: "%#{params[:query]}%")
+      @planes = Plane.where(sql_query, query: "%#{params[:city]}%")
     else
       @planes = Plane.all
+    end
+    @background_image = Plane::CITY_IMAGES[:"Default"]
+    if Plane::CITY_IMAGES[:"#{params[:city]}"]
+      @background_image = Plane::CITY_IMAGES[:"#{params[:city]}"]
     end
   end
 
@@ -38,6 +42,6 @@ class PlanesController < ApplicationController
   end
 
   def plane_params
-    params.require(:plane).permit(:address, :max_occupancy, :price, :query, :city)
+    params.require(:plane).permit(:plane_type, :address, :max_occupancy, :price, :query, :city, photos: [])
   end
 end
