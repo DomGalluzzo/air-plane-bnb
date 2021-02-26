@@ -7,11 +7,10 @@
 
 <% @planes.each do |plane| %>
   <% if params[:query].present? %>
-    <%= plane.city %>
+    <% plane.city %>
   <% else %>
-    <%= plane.city if params[:city] == plane.city %>
+    <% plane.city if params[:city] == plane.city %>
   <% end %>
-  
 <% end %>
 
   <h1 class="p-4">Our Planes</h1> <hr>
@@ -23,10 +22,10 @@
         <div class="card-trip-infos">
           <div>
             <h2><%= plane.plane_type %></h2>
-            <p class="card-text"><%= plane.city %></p>
+            <p class="card-text"> <i class="fas fa-users" style="font-size:16px;"></i> <%= plane.max_occupancy %></p>
           <h2 class="card-trip-pricing">$<%=plane.price%></h2>
           </div>
-          <%= link_to "Book Now", plane_path(plane), class: "btn btn-flat" %>
+          <%= link_to "More Info", plane_path(plane), class: "btn btn-flat" %>
         </div>
       </div>
     <% end %>
